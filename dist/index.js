@@ -39,7 +39,7 @@ function addNumber(x, y) {
 function returnNothing(x, y) {
     console.log(x, y);
 }
-returnNothing(true, false);
+returnNothing(1, 1);
 console.log(addNumber(1, 2));
 const add = (x, y) => {
     return x + y;
@@ -48,3 +48,14 @@ const sub = (x, y) => {
     return x - y;
 };
 //Classes
+class Person {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    register() {
+        return `${this.name} is now registered`;
+    }
+}
+const dotun = new Person('Dotun', 21);
+console.log(dotun.register());

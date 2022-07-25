@@ -61,7 +61,7 @@ function returnNothing(x: number, y: number): void {
   console.log(x, y);
 }
 
-returnNothing(true, false);
+returnNothing(1, 1);
 
 console.log(addNumber(1, 2));
 
@@ -78,4 +78,29 @@ const sub: MathFunc = (x: number, y: number): number => {
     return x - y
 }
 
+interface PersonInterface {
+  name: string;
+  age?: number; //optional due to the question mark
+  register(): string;
+}
+
 //Classes
+class Person implements PersonInterface{
+    name: string
+    age: number
+
+    constructor(name: string, age: number){
+        this.name = name
+        this.age = age
+    }
+
+    register(){
+        return `${this.name} is now registered`
+    }
+}
+
+
+
+
+const dotun = new Person('Dotun', 21)
+console.log(dotun.register())
