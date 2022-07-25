@@ -32,7 +32,12 @@ enum Direction {
   down = "down",
 }
 
-type User = {id: number, name: string}
+//Interface
+interface User {
+  readonly id: number; //id cannot be mutated after first assignment
+  name: string;
+  age?: number //optional due to the question mark
+}
 
 const user: User = {
   id: 1,
@@ -41,8 +46,36 @@ const user: User = {
 
 //Type assertion
 
-let cid: any = 1
+let cid: any = 1;
 
 // let customerId = <number>cid
 let customerId = cid as number;
 
+//function
+
+function addNumber(x: number, y: number): number {
+  return x + y;
+}
+
+function returnNothing(x: number, y: number): void {
+  console.log(x, y);
+}
+
+returnNothing(true, false);
+
+console.log(addNumber(1, 2));
+
+//Interface with function
+
+interface MathFunc{
+    (x: number, y: number): number
+}
+
+const add: MathFunc = (x: number, y: number): number => {
+    return x + y
+}
+const sub: MathFunc = (x: number, y: number): number => {
+    return x - y
+}
+
+//Classes
